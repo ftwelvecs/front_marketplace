@@ -1,0 +1,33 @@
+<div class="container mt-5">
+  <div class="mb-3">
+    <label for="productName" class="form-label">Название продукта: </label>
+    <input id="productName" [(ngModel)]="productName" type="text" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label for="description" class="form-label">Описание: </label>
+    <input id="description" [(ngModel)]="description" type="text" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label for="quantity" class="form-label">Кол-во: </label>
+    <input id="quantity" [(ngModel)]="quantity" type="number" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label for="price" class="form-label">Цена: </label>
+    <input id="price" [(ngModel)]="price" type="number" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label for="weight" class="form-label">Вес: </label>
+    <input id="weight" [(ngModel)]="weight" type="number" class="form-control">
+  </div>
+  <button class="btn btn-primary" (click)="add()">Добавить продукт</button>
+</div>
+<div class="container mt-5">
+
+  <!-- Родительский компонет ProductComponent -->
+  <!-- передает данные дочернему компоненту TableComponent -->
+  <app-table [data]="products"
+             [tableModel]="productTableModel"
+             [displayedColumns]="displayedColumns">
+  </app-table>
+
+</div>

@@ -19,8 +19,4 @@ export class CategoryComponent {
 
   constructor() {
   }
-
-  save() {
-    console.log("method save called")
-  }
 }

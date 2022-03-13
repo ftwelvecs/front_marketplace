@@ -9,20 +9,24 @@ import {ProductComponent} from "./components/product/product.component";
 import {OrderComponent} from "./components/order/order.component";
 import {FormsModule} from "@angular/forms";
 import {MatTableModule} from "@angular/material/table";
+import { TableComponent } from './components/table/table.component';
+import {MatTabsModule} from "@angular/material/tabs";
 
 @NgModule({
   declarations: [
     AppComponent,
     CategoryComponent,
     ProductComponent,
-    OrderComponent
+    OrderComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    MatTableModule
+    MatTableModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
