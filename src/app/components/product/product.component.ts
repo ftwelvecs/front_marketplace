@@ -2,6 +2,7 @@ import {Component, ViewChild} from "@angular/core";
 import {Product} from "../../shared/product.interface";
 import {ColumnDef} from "../../shared/column-def.interface";
 import {TableComponent} from "../table/table.component";
+import {ProductService} from "../../service/product.service";
 
 @Component({
   selector: 'app-product',
@@ -46,6 +47,12 @@ export class ProductComponent {
 
   // массив для отображения колонок
   displayedColumns = ['name', 'description', 'quantity', 'price', 'weight']
+
+  constructor(private productService: ProductService) {
+    this.productService.getAll().subscribe((data: Product[]) => {
+      this.products = data
+    });
+  }
 
   add() {
     const product: Product = {
