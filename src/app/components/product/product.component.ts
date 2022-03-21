@@ -48,9 +48,15 @@ export class ProductComponent {
   // массив для отображения колонок
   displayedColumns = ['name', 'description', 'quantity', 'price', 'weight']
 
+  isLoaded: boolean
+
   constructor(private productService: ProductService) {
     this.productService.getAll().subscribe((data: Product[]) => {
-      this.products = data
+      // отложенное выполнение
+      setTimeout(() => {
+        this.isLoaded = true
+        this.products = data
+      }, 5000) // 5000 миллисекунд = 5 секундам
     });
   }
 

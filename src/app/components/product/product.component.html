@@ -30,4 +30,8 @@
              [displayedColumns]="displayedColumns">
   </app-table>
 
+  <div *ngIf="!isLoaded" class="d-flex justify-content-center">
+    <mat-spinner></mat-spinner>
+  </div>
+
 </div>

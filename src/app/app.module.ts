@@ -12,6 +12,7 @@ import {MatTableModule} from "@angular/material/table";
 import {TableComponent} from './components/table/table.component';
 import {MatTabsModule} from "@angular/material/tabs";
 import {HttpClientModule} from "@angular/common/http";
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {HttpClientModule} from "@angular/common/http";
     FormsModule,
     HttpClientModule,
     MatTableModule,
-    MatTabsModule
+    MatTabsModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
