@@ -8,10 +8,14 @@ import {Order} from "../../shared/order.interface";
 })
 export class OrderComponent {
 
+  editOrder: Order = {}
+
   orders: Array<Order> = [{
+    id: 1,
     productName: 'Телефон',
     discount: 10
   },{
+    id: 2,
     productName: 'Чехол',
     discount: 5
   }]
@@ -22,5 +26,13 @@ export class OrderComponent {
 
   delete(productName: string) {
     this.orders = this.orders.filter(order => order.productName != productName)
+  }
+
+  save() {
+    // TODO: реализовать метод
+  }
+
+  getCopy(obj:any) {
+    return Object.assign({}, obj)
   }
 }

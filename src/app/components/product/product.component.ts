@@ -42,22 +42,29 @@ export class ProductComponent {
     {
       columnDef: 'weight',
       columnLabel: 'Вес'
+    },
+    {
+      columnDef: 'menu',
+      columnLabel: 'Меню'
     }
   ]
 
   // массив для отображения колонок
-  displayedColumns = ['name', 'description', 'quantity', 'price', 'weight']
+  displayedColumns = ['name', 'description', 'quantity', 'price', 'weight', 'menu']
 
   isLoaded: boolean
 
+  // Dependency injection
   constructor(private productService: ProductService) {
-    this.productService.getAll().subscribe((data: Product[]) => {
-      // отложенное выполнение
-      setTimeout(() => {
-        this.isLoaded = true
-        this.products = data
-      }, 5000) // 5000 миллисекунд = 5 секундам
-    });
+    this.productService.getAll()
+      // callback
+      .subscribe((data: Product[]) => {
+        // отложенное выполнение
+        setTimeout(() => {
+          this.isLoaded = true
+          this.products = data
+        }, 5000) // 5000 миллисекунд = 5 секундам
+      });
   }
 
   add() {
